@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>Create New CRUD</h1>
+  
+    
+    
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <br>
+            <label for="nama">nama:</label>
+            <input 
+                formControlName="nama"
+                id="nama" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.nama.touched && f.nama.invalid" class="alert alert-danger">
+                <div *ngIf="f.nama.errors?.required">Nama is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <br>
+            <label for="email">email:</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors?.required">Email is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <br>
+            <label for="phone">phone:</label>
+            <input 
+                formControlName="phone"
+                id="phone" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+                <div *ngIf="f.phone.errors?.required">No Telp is required.</div>
+            </div>
+        </div>
+
+        <br>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>

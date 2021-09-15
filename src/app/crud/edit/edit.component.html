@@ -1,0 +1,51 @@
+<div *ngIf="post != null" class="container">
+    <h1>Update CRUD</h1>
+  
+    <a href="#" routerLink="/crud/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group" >
+            <label for="nama">Nama:</label>
+            <input 
+                formControlName="nama"
+                id="nama" 
+                type="text" 
+                [(ngModel)]="post.nama"
+                class="form-control">
+            <div *ngIf="f.nama.touched && f.nama.invalid" class="alert alert-danger">
+                <div *ngIf="f.nama.errors?.required">nama is required.</div>
+            </div>
+        </div>
+         
+        <div class="form-group">
+            <label for="email">Email</label>
+            <textarea 
+                formControlName="email"
+                id="email" 
+                type="text" 
+                [(ngModel)]="post.email"
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                <div *ngIf="f.email.errors?.required">Email is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <textarea 
+                formControlName="phone"
+                id="phone" 
+                type="text" 
+                [(ngModel)]="post.phone"
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.phone.touched && f.phone.invalid" class="alert alert-danger">
+                <div *ngIf="f.phone.errors?.required">Phone is required.</div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
