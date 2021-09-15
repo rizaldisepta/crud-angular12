@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "nama": "as",
+      "email": "wqe",
+      "phone": "213",
+      "id": 4
+    },
+    {
+      "nama": "wer",
+      "email": "234",
+      "phone": "123",
+      "id": 6
+    },
+    {
+      "nama": "b",
+      "email": "b",
+      "phone": "b",
+      "id": 7
+    }
+  ]
+}
